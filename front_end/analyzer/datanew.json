@@ -1,0 +1,28 @@
+[{
+"ip": "192.168.0.1",
+"name": "Terrorfinder",
+"state": "Suspicous",
+"mac" : "AA:BB:CC:DD:EE:FF",
+"type" : "Storage Server"
+},
+{
+"ip": "192.168.0.2",
+"name": "Cyberboy",
+"state": "Idle", 
+"mac" : "AA:BB:CC:DD:EE:EE",
+"type" : "Application Server"
+},
+{
+"ip": "192.168.0.3",
+"name": "Bigdatamaker",
+"state": "Suspicous",
+"mac" : "AA:BB:CC:DD:EE:DD",
+"type" : "Backup Server"
+},
+{
+"ip": "192.168.0.4",
+"name": "PazamCalculator",
+"state": "Idle",
+"mac" : "AA:BB:CC:DD:EE:FF", 
+"type" : "Application Server"
+}]

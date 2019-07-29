@@ -1,0 +1,20 @@
+[{
+ip: "192.168.0.1",
+name: "Terrorfinder",
+state: "Idle" 
+},
+{
+ip: "192.168.0.2",
+name: "Cyberboy",
+state: "Idle" 
+},
+{
+ip: "192.168.0.3",
+name: "Bigdatamaker",
+state: "Idle" 
+},
+{
+ip: "192.168.0.4",
+name: "PazamCalculator",
+state: "Idle" 
+}]
