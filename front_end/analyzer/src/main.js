@@ -4,9 +4,9 @@ import router from './router'
 import store from './store'
 import './../node_modules/bulma/css/bulma.css';
 import './../node_modules/bulma/css/bulma.css';
-
 Vue.config.productionTip = false
-
+import HighchartsVue from 'highcharts-vue'
+Vue.use(HighchartsVue);
 new Vue({
   router,
   store,

@@ -14,8 +14,8 @@
 
   <div id="navbarExampleTransparentExample" class="navbar-menu " style="background-color: #4ce0d7">
     <div class="navbar-start">
-      <a class="navbar-item whitetext" href="/"> <router-link  class="whitetext nav-link" to="/">Reports</router-link> </a> 
-      <a class="navbar-item"> <router-link  class="nav-link" to="/">Network</router-link> </a> 
+      <a class="navbar-item" href="/"> <router-link  class="nav-link has-text-black" to="/">Reports</router-link> </a> 
+      <a class="navbar-item"> <router-link  class="nav-link has-text-black " to="/Export">Export</router-link> </a> 
     </div>
   </div> 
 </nav>
