@@ -3,12 +3,12 @@
       <div class="container-fluid">
         
       <div class="table-container">
-          <div class="control" style="margin-top: 20px" v-if="this.exportlist.length > 0">
-                        <a class="button is-danger"  style="margin-left: 305px" @click="opendeleteall()">Delete all</a>
-                        <a class="button is-success"  style="margin-left: 480px;" @click="csvExport()">Export</a>
+          <div class="control" style="margin-top: 20px; text-align: center" v-if="this.exportlist.length > 0" >
+                        <button class="button is-danger"  style="margin-left: 50px" @click="opendeleteall()">Delete all</button>
+                        <button class="button is-success"  style="margin-left: 50px;" @click="csvExport()">Export</button>
             <table class="table container">
                 <tr><th v-for="proprety in this.objectAttributes" v-bind:key="proprety">{{proprety}}</th><th></th></tr>
-                <tr v-for="data in this.exportlist" v-bind:key="data"><td v-for="attr in Object.keys(data)" v-bind:key="attr">{{data[attr]}}</td><td> <div  @click="opendeletemodal(data)" style="margin-top: 5px; margin-right: 10px; font-size: 20px; border-style: solid; border-width: 2px; border-radius: 1000px; padding-left: 10px; padding-right: 10px; padding-top: 0px; padding-bottom: 3px; margin-top: 10px; margin-bottom: 10px">x</div></td></tr>
+                <tr v-for="data in this.exportlist" v-bind:key="data"><td v-for="attr in Object.keys(data)" v-bind:key="attr">{{data[attr]}}</td><td> <div  @click="opendeletemodal(data)" style=" font-size: 20px; border-style: solid; border-width: 2px; border-radius: 1000px; padding-left: 10px; padding-right: 10px; padding-top: 0px; padding-bottom: 3px;">x</div></td></tr>
             </table>
     </div>
     </div>
@@ -129,7 +129,9 @@ export default {
 </script>
 
 <style>
-
+td{
+  padding-top: 30px;
+}
 
 
     

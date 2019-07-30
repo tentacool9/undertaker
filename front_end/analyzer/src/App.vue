@@ -1,14 +1,15 @@
 <template>
 <div>
-<nav class="navbar is-transparent">
-  <div class="navbar-brand">
+<nav class="navbar">
+  <div class="navbar-brand"  style="background-color: #4ce0d7">
     <a style="background-color: #4ce0d7; padding-bottom: 10px; padding-top: 10px; padding-left: 10px; padding-right: 10px"  >
       <img src="./assets/logotemp.png" style="background-color: #4ce0d7;  "  alt="Bulma: a modern CSS framework based on Flexbox" width="30" height="30">
     </a>
-    <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-      <span></span>
-      <span></span>
-      <span></span>
+    <div class="navbar-burger burger" style="background-color: #4ce0d7; font-size: 10px">
+      <div>
+      <a style="margin-bottom: 0px; margin-top: 0px" class="navbar-item" href="/"> <router-link  class="nav-link has-text-black" to="/">Reports</router-link> </a> 
+      <a class="navbar-item"> <router-link  class="nav-link has-text-black " to="/Export">Export</router-link> </a> 
+      </div>
     </div>
   </div>
 

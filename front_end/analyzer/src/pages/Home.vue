@@ -1,6 +1,6 @@
 <template>
 <div class="home container">
-  <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+  <button @click="topFunction()" id="myBtn" title="Go to top">Top</button>
 <div style="margin-bottom: 30px">Filter: <select><option>All</option><option>Idle</option><option>Suspicious</option></select><select style="margin-left: 10px"><option>All</option><option>Not Classified</option><option>Application Server</option><option>Web Server</option><option>Storage Server</option></select></div>
  <div  v-bind:class="{'card': true,'space' : (data.hostname == selectedSystem.hostname) }"  v-for="data in systems" v-bind:key="data.ip" >
   <header  class="card-header" v-bind:class="{ 'idle': (data.state == 'Idle'), 'warning': (data.state == 'Suspicious') }"   >
@@ -10,7 +10,7 @@
     <strong style="margin-right: 20px; margin-top: 13px" @click="selectSys(data)" >
       {{(data.tag == null) ? 'Not Classified' : data.tag}}
     </strong>
-     <button @click="opendeletemodal(data)" style="margin-top: 5px; margin-right: 10px; font-size: 20px; border-style: solid; border-width: 2px; border-radius: 1000px; padding-left: 10px; padding-right: 10px; padding-top: 0px; padding-bottom: 3px; margin-top: 10px; margin-bottom: 10px">x</button>
+     <button @click="opendeletemodal(data)" style="font-weight: 700;background-color: #fff;border-color: #fff;margin-top: 5px; margin-right: 10px; font-size: 20px; border-style: solid; border-width: 2px; border-radius: 1000px; padding-left: 10px; padding-right: 10px; padding-top: 0px; padding-bottom: 3px; margin-top: 10px; margin-bottom: 10px; color: #000">x</button>
   </header>
   
   <div v-bind:class="{'card-content' : (data.hostname == selectedSystem.hostname) }"  v-if="(data.hostname == selectedSystem.hostname)">
@@ -274,6 +274,10 @@ export default {
           break;
         }
       }
+    },
+    topFunction : function() {
+     document.body.scrollTop = 0; // For Safari
+     document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
     }
   },
 
@@ -283,7 +287,7 @@ export default {
         });
     window.onscroll = function() {scrollFunction()};
 
-function scrollFunction() {
+  function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     document.getElementById("myBtn").style.display = "block";
   } else {
@@ -292,11 +296,8 @@ function scrollFunction() {
 }
 
 // When the user clicks on the button, scroll to the top of the document
-function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+
 }
-  }
 }
 </script>
 <style>
@@ -318,7 +319,7 @@ header.idle {
   z-index: 99; /* Make sure it does not overlap */
   border: none; /* Remove borders */
   outline: none; /* Remove outline */
-  background-color: red; /* Set a background color */
+  background-color: #4ce0d7; /* Set a background color */
   color: white; /* Text color */
   cursor: pointer; /* Add a mouse pointer on hover */
   padding: 15px; /* Some padding */
