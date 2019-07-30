@@ -3,9 +3,9 @@
       <div class="container-fluid">
         
       <div class="table-container">
-          <div class="control" style="margin-top: 20px">
-                        <a class="button is-danger" style="margin-left: 305px" @click="opendeleteall()">Delete all</a>
-                        <a class="button is-success" style="margin-left: 480px;">Export</a>
+          <div class="control" style="margin-top: 20px" v-if="this.exportlist.length > 0">
+                        <a class="button is-danger"  style="margin-left: 305px" @click="opendeleteall()">Delete all</a>
+                        <a class="button is-success"  style="margin-left: 480px;" @click="csvExport()">Export</a>
             <table class="table container">
                 <tr><th v-for="proprety in this.objectAttributes" v-bind:key="proprety">{{proprety}}</th><th></th></tr>
                 <tr v-for="data in this.exportlist" v-bind:key="data"><td v-for="attr in Object.keys(data)" v-bind:key="attr">{{data[attr]}}</td><td> <div  @click="opendeletemodal(data)" style="margin-top: 5px; margin-right: 10px; font-size: 20px; border-style: solid; border-width: 2px; border-radius: 1000px; padding-left: 10px; padding-right: 10px; padding-top: 0px; padding-bottom: 3px; margin-top: 10px; margin-bottom: 10px">x</div></td></tr>
@@ -52,6 +52,11 @@
 
 <script>
 import { mapState } from 'vuex'
+import Vue from 'vue'
+import JsonExcel from 'vue-json-excel'
+ 
+Vue.component('downloadExcel', JsonExcel)
+
 export default {
     
   name: 'Export',
@@ -103,6 +108,21 @@ export default {
         
     
         this.delallmodal = false;
+    },
+    csvExport() {
+      let csvContent = "data:text/csv;charset=utf-8,";
+      csvContent += [
+        Object.keys(this.$store.state.exportlist[0]).join(";"),
+        ...arrData.map(item => Object.values(item).join(";"))
+      ]
+        .join("\n")
+        .replace(/(^\[)|(\]$)/gm, "");
+
+      const data = encodeURI(csvContent);
+      const link = document.createElement("a");
+      link.setAttribute("href", data);
+      link.setAttribute("download", "export.csv");
+      link.click();
     }
 }
 }
