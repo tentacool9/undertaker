@@ -20,7 +20,7 @@
     "bulma-switch": "^2.0.0",
     "core-js": "^2.6.5",
     "favicon": "0.0.2",
-    "highcharts": "^7.1.2",
+    "highcharts": "^9.0.0",
     "highcharts-vue": "^1.3.5",
     "vue": "^2.6.10",
     "vue-json-excel": "^0.2.98",
